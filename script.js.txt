@@ -1,0 +1,30 @@
+// script.js
+
+const billForm = document.getElementById('bill-form');
+const billList = document.getElementById('bill-list');
+
+billForm.addEventListener('submit', addBill);
+
+function addBill(e) {
+    e.preventDefault();
+
+    const billName = document.getElementById('bill-name').value;
+    const billAmount = parseFloat(document.getElementById('bill-amount').value);
+
+    if (billName === '' || isNaN(billAmount)) {
+        alert('Please fill in both fields with valid data.');
+        return;
+    }
+
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <span>${billName}</span>
+        <span>$${billAmount.toFixed(2)}</span>
+    `;
+
+    billList.appendChild(li);
+
+    // Clear form inputs
+    document.getElementById('bill-name').value = '';
+    document.getElementById('bill-amount').value = '';
+}

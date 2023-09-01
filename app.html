@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Adding App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bill Adding App</h1>
+    </header>
+    <main>
+        <section class="bill-form">
+            <h2>Add a Bill</h2>
+            <form id="bill-form">
+                <label for="bill-name">Bill Name:</label>
+                <input type="text" id="bill-name" required>
+                <label for="bill-amount">Bill Amount ($):</label>
+                <input type="number" id="bill-amount" step="0.01" required>
+                <button type="submit">Add Bill</button>
+            </form>
+        </section>
+        <section class="bill-list">
+            <h2>Bill List</h2>
+            <ul id="bill-list"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
